@@ -12,10 +12,10 @@ export class MenuComponent implements OnInit {
   menuItems: Menu[];
 
   constructor(private menuService: MenuService) {
-    this.menuItems = menuService.getMenuItems();
   }
 
   ngOnInit() {
+    this.menuItems = this.menuService.getMenuItems();
   }
 
 }

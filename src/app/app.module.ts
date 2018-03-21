@@ -22,7 +22,7 @@ import { MenuService } from './services/menu.service';
     BrowserModule,
     MenuService
   ],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
