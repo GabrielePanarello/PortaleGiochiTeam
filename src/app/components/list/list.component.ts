@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  selectedId: number;
+  heroes$: Observable<ParamMap>;
+  constructor(    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.heroes$ = this.route.paramMap;
   }
 
 }

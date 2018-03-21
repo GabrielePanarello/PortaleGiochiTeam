@@ -7,20 +7,24 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { RouterModule } from '@angular/router';
+import { MainRouter } from './routers/mainRouter';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     ListComponent,
     EditComponent,
-    MenuComponent
+    MenuComponent,
+    MainRouter
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MainRouter
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainRouter]
 })
 export class AppModule { }
