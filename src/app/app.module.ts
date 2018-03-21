@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { MenuService } from './services/menu.service';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MenuComponent } from './components/menu/menu.component';
     MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MenuService
   ],
   providers: [],
   bootstrap: [AppComponent]
