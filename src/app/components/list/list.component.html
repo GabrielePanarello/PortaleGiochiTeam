@@ -1,7 +1,11 @@
-<select type="text" placeholder="genere" [(ngModel)]="filtro">
+filtro per generi
+<select [(ngModel)]="filtro">
+        <option value="genere.id" *ngFor="let item of items2">{{gener.nome}}</option>
+      
+</select>
 
 <ng-container *ngFor="let item of items; let i=index" (click)="visualizzaDettaglio(item)">
-    <ng-container *ngIf="item.genere === filtro">
+    <ng-container *ngIf="item.genere === filtro || filtro ==='tutti'">
         <div>id: {{item.id}}</div>
         <div>name: {{item.name}}</div>
         <div>descrizione: {{item.descrizione}}</div>

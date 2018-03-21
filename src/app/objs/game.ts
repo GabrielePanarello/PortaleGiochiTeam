@@ -7,6 +7,7 @@ export class Game{
     rating: number;
     prezzo: number;
     annoUscita: number;
+    
 
     constructor(id: number = undefined, name: string = "", descrizione: string = "", genere: string="", rating: number=undefined, prezzo: number=undefined, annoUscita: number=undefined){
         this.id = id;

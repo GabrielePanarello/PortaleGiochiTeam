@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  filtro:string="";
+  filtro:string="tutti";
   items: Game [];
 
   constructor(private router: Router, private listService: ListaGameService){}
