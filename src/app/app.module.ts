@@ -8,6 +8,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MainRouter } from './routers/mainRouter';
 import { ListaGameService } from './services/list-game.service';
+import { MenuService } from './services/menu.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { ListaGameService } from './services/list-game.service';
     BrowserModule,
     MainRouter
   ],
-  providers: [ListaGameService],
+  providers: [ListaGameService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
