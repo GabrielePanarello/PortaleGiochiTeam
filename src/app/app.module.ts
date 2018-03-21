@@ -16,15 +16,13 @@ import { MainRouter } from './routers/mainRouter';
     HomeComponent,
     ListComponent,
     EditComponent,
-    MenuComponent,
-    MainRouter
-   
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     MainRouter
   ],
   providers: [],
-  bootstrap: [MainRouter]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
