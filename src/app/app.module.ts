@@ -7,12 +7,13 @@ import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { EditComponent } from './components/edit/edit.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { MenuService } from './services/menu.service';
+import { RouterModule } from '@angular/router';
+import { MainRouter } from './routers/mainRouter';
+import { ListaGameService } from './services/list-game.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     ListComponent,
     EditComponent,
@@ -20,9 +21,9 @@ import { MenuService } from './services/menu.service';
   ],
   imports: [
     BrowserModule,
-    MenuService
+    MainRouter
   ],
-  providers: [MenuService],
+  providers: [ListaGameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

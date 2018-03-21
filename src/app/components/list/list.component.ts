@@ -11,10 +11,7 @@ export class ListComponent implements OnInit {
 
   items: Game [];
 
-  constructor(private listService: ListaGameService)
-  {
-
-  }
+  constructor(private listService: ListaGameService){}
 
   ngOnInit() {
     this.items = this.listService.getCharactersList();
