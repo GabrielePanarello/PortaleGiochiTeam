@@ -11,6 +11,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'list', component: ListComponent },
     { path: 'edit', component: EditComponent},
+    { path: 'edit/:id', component: EditComponent},
     { path: "detail/:id", component: DetailComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: '**', component: HomeComponent }
