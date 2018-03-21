@@ -6,7 +6,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "../app.component";
 
-//Prova
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'list', component: ListComponent },
@@ -17,14 +16,7 @@ const appRoutes: Routes = [
   
   @NgModule({
     imports: [
-      RouterModule.forRoot(
-        appRoutes,
-        { enableTracing: true }
-      )
-      // other imports here
-    ],
-    declarations: [
-        AppComponent,
-      ],
+      RouterModule.forRoot(appRoutes)
+    ]
   })
   export class MainRouter { }

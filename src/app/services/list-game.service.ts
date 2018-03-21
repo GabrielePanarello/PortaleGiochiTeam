@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Game } from "../objs/Game";
+import { Game } from '../objs/game';
 
 @Injectable()
 export class ListaGameService {
 
- 
   private items: Game[] = [
     new Game(1, "FIFA2018", "gioco di calcio", "sportivo", 5, 30, 2018),
     new Game(2, "Need for Speed", "gare ad alta velocità su strade aperte", "sportivo", 6, 15, 2015),
