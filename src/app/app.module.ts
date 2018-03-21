@@ -9,6 +9,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MainRouter } from './routers/mainRouter';
 import { ListaGameService } from './services/list-game.service';
 import { MenuService } from './services/menu.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MenuService } from './services/menu.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MainRouter
   ],
   providers: [ListaGameService, MenuService],
