@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { ListComponent } from './components/list/list.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ListComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule
