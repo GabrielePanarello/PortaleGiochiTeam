@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth-service.service';
 
 
 
@@ -30,7 +32,7 @@ import { UserService } from './services/user.service';
     FormsModule,
     MainRouter
   ],
-  providers: [ListaGameService, MenuService, LoginService, UserService],
+  providers: [ListaGameService, MenuService, LoginService, UserService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
