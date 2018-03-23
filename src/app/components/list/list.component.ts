@@ -14,7 +14,6 @@ export class ListComponent implements OnInit {
   filtro=0;
   items: Game [];
   generi: Genere[];
-  controllo=0;
 
   constructor(private router: Router, private listService: ListaGameService, private genereService:GenereService){}
 
