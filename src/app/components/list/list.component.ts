@@ -27,8 +27,4 @@ export class ListComponent implements OnInit {
       this.router.navigate(['/detail/'+item.id]);
   }
 
-  change(){
-    console.log("controllo: "+this.controllo);
-  }
-
 }
