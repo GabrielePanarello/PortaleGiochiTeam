@@ -17,6 +17,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth-service.service';
 import { AuthLoginService } from './services/auth-login.service';
 import { DetailComponent } from './components/detail/detail.component';
+import { GenereService } from './services/genere.service';
 
 
 
@@ -35,7 +36,7 @@ import { DetailComponent } from './components/detail/detail.component';
     FormsModule,
     MainRouter
   ],
-  providers: [ListaGameService, MenuService, LoginService, UserService, AuthGuardService, AuthService, AuthLoginService],
+  providers: [ListaGameService, MenuService, GenereService, LoginService, UserService, AuthGuardService, AuthService, AuthLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,13 @@
-<div *ngFor="let item of items" (click)="visualizzaDettaglio(item)">
-    <div>id: {{item.id}}</div>
-    <div>name: {{item.name}}</div>
-    <div>descrizione: {{item.descrizione}}</div>
-    <div *ngIf="i!=items.length-1">-------------------</div>
-</div>
+filtro per generi
+<select [(ngModel)]="filtro" (change)="change()">
+        <option *ngFor="let genere of generi" value="{{genere.id}}">{{genere.name}}</option>
+</select>
+
+<ng-container *ngFor="let item of items; let i=index" (click)="visualizzaDettaglio(item)">
+    <ng-container *ngIf="item.genere.id === filtro || filtro === 0">
+        <div>id: {{item.id}}</div>
+        <div>name: {{item.name}}</div>
+        <div>descrizione: {{item.descrizione}}</div>
+        <div *ngIf="i!=items.length-1">-------------------</div>
+    </ng-container>
+</ng-container>

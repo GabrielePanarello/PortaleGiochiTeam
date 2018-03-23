@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  filtro:string="";
+  filtro=0;
   items: Game [];
 
   constructor(private router: Router, private listService: ListaGameService){}
@@ -21,6 +21,10 @@ export class ListComponent implements OnInit {
   visualizzaDettaglio(item: Game)
   {
       this.router.navigate(['/detail/'+item.id]);
+  }
+
+  change(){
+    console.log("filtro: "+this.filtro);
   }
 
 }

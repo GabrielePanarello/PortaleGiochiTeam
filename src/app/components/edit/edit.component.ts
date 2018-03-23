@@ -4,6 +4,8 @@ import { Game } from '../../objs/game';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationStart } from '@angular/router';
 import { AuthService } from '../../services/auth-service.service';
+import { GenereService } from '../../services/genere.service';
+import { Genere } from '../../objs/genere';
 
 @Component({
   selector: 'app-edit',
@@ -13,6 +15,8 @@ import { AuthService } from '../../services/auth-service.service';
 export class EditComponent implements OnInit {
 
   gamesList: Game[];
+  generi: Genere[];
+
   inputGame: string;
   outputGame: Game;
   newItem: Game;
@@ -20,9 +24,10 @@ export class EditComponent implements OnInit {
   founds= false;
   fromDetail = false;
   isClicked = false;
+
   hasChanges: boolean = false;
 
-  constructor(private listService: ListaGameService, private genresService: GenreService, private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { 
+  constructor(private listService: ListaGameService, private genresService: GenereService, private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { 
     this.activatedRoute.params.subscribe(params => {
       if (params['id'] != null && params['id'] != "") {
         this.newItem = this.listService.getGameById(params['id']);
@@ -38,7 +43,7 @@ export class EditComponent implements OnInit {
       }
     });
 
-    this.generi = this.genresService.getGeneriList();
+    this.generi = this.genresService.getGenereItems();
   }
 
   ngOnInit() {
@@ -60,8 +65,8 @@ export class EditComponent implements OnInit {
         this.newItem = undefined;
       } else {
         this.newItem = this.listService.getGameByName(value);
-        this.outputGame = this.newItem.clone();
-        this.outputGame.genere = this.outputGame.genere.clone();
+        this.outputGame = this.newItem;
+        this.outputGame.genere = this.outputGame.genere;
         this.founds = false;
       }
     } else {

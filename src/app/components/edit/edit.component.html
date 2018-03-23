@@ -3,12 +3,12 @@
     <ng-container *ngIf="outputGame != undefined">
         <input [(ngModel)]="outputGame.name" class="inputGame" />
         <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
-        <input [(ngModel)]="outputGame.genere" class="inputGame" />
+        <input [(ngModel)]="outputGame.genere.name" class="inputGame" />
         <input [(ngModel)]="outputGame.rating" class="inputGame" />
         <input [(ngModel)]="outputGame.prezzo" class="inputGame" />
         <input [(ngModel)]="outputGame.annoUscita" class="inputGame" />
     </ng-container>
 
-    <button (click)="ricerca()" class="inputGame">Ricerca</button>
-    <button (click)="modifica()" name="reset" class="inputGame">modifica</button>
+    <button (click)="showGame(inputGame)" class="inputGame">Ricerca</button>
+    <button (click)="updateGame()" name="reset" class="inputGame">modifica</button>
 </div>
