@@ -1,11 +1,11 @@
-<input type="text" name="ricerca">
-<button onclick="ricerca()"></button>
+<div class="contenitore margine">
+    <input [(ngModel)]="inputGame" class="inputGame" />
+    <ng-container *ngIf="outputGame != undefined">
+        <input [(ngModel)]="outputGame.name" class="inputGame" />
+        <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
+        <input [(ngModel)]="outputGame.rating" class="inputGame" />
+    </ng-container>
 
-<input type="number" name="id">
-<input type="text" name="nome-gioco">
-<input type="text" name="descrizione">
-<input type="text" name="genere">
-<input type="number" name="rating">
-<input type="number" name="prezzo">
-<input type="number" name="number">
-<button name="reset">modifica</button>
+    <button (click)="ricerca()" class="inputGame">Ricerca</button>
+    <button name="reset" class="inputGame">modifica</button>
+</div>
