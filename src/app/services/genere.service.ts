@@ -8,9 +8,9 @@ export class GenereService {
 
   private genereItems : Genere[] = [
     new Genere(0, "tutti"),
-    new Genere(1,"sportivo"),
-    new Genere(2,"sparatutto"),
-    new Genere(3,"avventura")
+    new Genere(1, "sportivo"),
+    new Genere(2, "sparatutto"),
+    new Genere(3, "avventura")
   ];
 
   getGenereItems() : Genere[]{
@@ -23,6 +23,5 @@ export class GenereService {
             return item.clone();
         }
     }
-    return null;
   }
 }

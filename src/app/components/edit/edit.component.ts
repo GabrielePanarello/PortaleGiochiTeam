@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaGameService } from '../../services/list-game.service';
 import { Game } from '../../objs/game';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationStart } from '@angular/router';
+import { AuthService } from '../../services/auth-service.service';
+import { GenereService } from '../../services/genere.service';
+import { Genere } from '../../objs/genere';
 
 @Component({
   selector: 'app-edit',
@@ -12,29 +15,71 @@ import { NavigationStart } from '@angular/router';
 export class EditComponent implements OnInit {
 
   gamesList: Game[];
+  generi: Genere[];
+
   inputGame: string;
   outputGame: Game;
-  hasChanges: boolean = false;
+  newItem: Game;
 
-  constructor(private listGameService: ListaGameService, private router: Router) { 
-    this.gamesList = listGameService.getCharactersList();
-    router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        this.hasChanges = this.listGameService.checkModification(this.outputGame);
+  founds= false;
+  fromDetail = false;
+  isClicked = false;
+
+  constructor(private listService: ListaGameService, private genresService: GenereService, private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { 
+    this.activatedRoute.params.subscribe(params => {
+      if (params['id'] != null && params['id'] != "") {
+        this.newItem = this.listService.getGameById(params['id']);
+        this.outputGame = this.newItem.clone();
+        this.outputGame.genere = this.outputGame.genere.clone();
+        this.fromDetail = true;
       }
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.authService.checkItemSign(this.outputGame, this.newItem, this.isClicked);
+      }
+    });
+
+    this.generi = this.genresService.getGenereItems();
   }
 
   ngOnInit() {
+    if (this.fromDetail == true) {
+      this.listService.getGameById(this.newItem.id);
+      this.listService.getGameById(this.outputGame.id);
+    }
+
   }
 
-  ricerca(){
-      this.outputGame = this.listGameService.getGameByName(this.inputGame);
-      console.log(this.outputGame);
+  ngOnDestroy() {
+    this.outputGame = undefined;
   }
-  
-  modifica() {
-    this.listGameService.changeGame(this.outputGame);
+
+  showGame(value: string) {
+    if (value != undefined) {
+      if (this.listService.getGameByName(value) == null) {
+        this.founds = true;
+        this.newItem = undefined;
+      } else {
+        this.newItem = this.listService.getGameByName(value);
+        this.outputGame = this.newItem.clone();
+        this.outputGame.genere = this.outputGame.genere.clone();
+        this.founds = false;
+      }
+    } else {
+      alert("Inserisci il Valore");
+    }
+  }
+
+  updateGame() {
+    this.listService.editGame(this.newItem);
+    this.isClicked = true;
+    alert("Modificato");
+  }
+
+  resetDefaultGame(){
+    this.newItem = this.outputGame;
   }
 
 }
