@@ -25,7 +25,7 @@ export class AuthService {
   }
 
   checkItemSign(item: Game, modifiedItem: Game, isClicked: boolean) {
-
+    console.log("Item 1: "+ JSON.stringify(item) + "\n\nItem 2 "+JSON.stringify(modifiedItem));
     if (JSON.stringify(item) != JSON.stringify(modifiedItem)) {
       this.isModified = false;
     } else {
