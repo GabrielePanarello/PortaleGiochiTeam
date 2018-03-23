@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Game } from '../objs/game';
+import { Genere } from '../objs/genere';
+import { GenereService } from './genere.service';
 
 @Injectable()
 export class ListaGameService {
+
+    constructor(private genereService:GenereService){}
+
+   
 
   private items: Game[] = [
     new Game(1, "FIFA2018","assets\fifa.jpg","gioco di calcio", "sportivo", 5, 30, 2018),
