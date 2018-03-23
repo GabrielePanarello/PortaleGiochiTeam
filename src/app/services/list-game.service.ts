@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Game } from '../objs/game';
+import { Genere } from '../objs/genere';
+import { GenereService } from './genere.service';
 
 @Injectable()
 export class ListaGameService {
 
+    generi: Genere[];
+
+    constructor(private genereService:GenereService){}
+
+    ngOnInit() {
+        this.generi = this.genereService.getGenereItems();
+      }
+
   private items: Game[] = [
-    new Game(1, "FIFA2018", "gioco di calcio", "sportivo", 5, 30, 2018),
-    new Game(2, "Need for Speed", "gare ad alta velocità su strade aperte", "sportivo", 6, 15, 2015),
-    new Game(3, "Assassin's Creed", "gioco di guerra", "avventura", 16, 20, 2007)
+    new Game(1, "FIFA2018", "gioco di calcio", this.generi[0], 5, 30, 2018),
+    new Game(2, "Need for Speed", "gare ad alta velocità su strade aperte",  this.generi[0], 6, 15, 2015),
+    new Game(3, "Assassin's Creed", "gioco di guerra",  this.generi[2], 16, 20, 2007)
   ];
 
   getCharactersList(): Game[] {

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../../objs/game';
 import { ListaGameService } from '../../services/list-game.service';
 import { Router } from '@angular/router';
+import { Genere } from '../../objs/genere';
+import { GenereService } from '../../services/genere.service';
 
 @Component({
   selector: 'app-list',
@@ -11,11 +13,13 @@ import { Router } from '@angular/router';
 export class ListComponent implements OnInit {
   filtro:string="tutti";
   items: Game [];
+  generi: Genere[];
 
-  constructor(private router: Router, private listService: ListaGameService){}
+  constructor(private router: Router, private listService: ListaGameService, private genereService:GenereService){}
 
   ngOnInit() {
     this.items = this.listService.getCharactersList();
+    this.generi = this.genereService.getGenereItems();
   }
 
   visualizzaDettaglio(item: Game)

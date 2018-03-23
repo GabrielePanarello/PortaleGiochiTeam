@@ -10,6 +10,7 @@ import { MainRouter } from './routers/mainRouter';
 import { ListaGameService } from './services/list-game.service';
 import { MenuService } from './services/menu.service';
 import { FormsModule } from '@angular/forms';
+import { GenereService } from './services/genere.service';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MainRouter
   ],
-  providers: [ListaGameService, MenuService],
+  providers: [ListaGameService, MenuService, GenereService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 filtro per generi
 <select [(ngModel)]="filtro">
-        <option value="genere.id" *ngFor="let item of items2">{{gener.nome}}</option>
-      
+        <option value="genere.name" *ngFor="let genere of generi">{{gener2.nome}}</option>
 </select>
 
 <ng-container *ngFor="let item of items; let i=index" (click)="visualizzaDettaglio(item)">

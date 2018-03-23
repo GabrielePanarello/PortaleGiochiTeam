@@ -1,15 +1,17 @@
+import { Genere } from "./genere";
+
 export class Game{
     
     id: number;
     name: string;
     descrizione: string;
-    genere: string;
+    genere: Genere;
     rating: number;
     prezzo: number;
     annoUscita: number;
     
 
-    constructor(id: number = undefined, name: string = "", descrizione: string = "", genere: string="", rating: number=undefined, prezzo: number=undefined, annoUscita: number=undefined){
+    constructor(id: number = undefined, name: string = "", descrizione: string = "", genere: Genere = null, rating: number=undefined, prezzo: number=undefined, annoUscita: number=undefined){
         this.id = id;
         this.name = name;
         this.descrizione = descrizione; 
