@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from '../objs/user';
-import { UserService } from './user.service';
-import { Game } from '../objs/game';
+import { User } from '../../objs/user';
+import { UserService } from '../LoginServices/user.service';
+import { Game } from '../../objs/game';
 
 @Injectable()
 export class AuthService {

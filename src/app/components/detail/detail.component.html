@@ -1,11 +1,11 @@
-<div>
+<div id="container">
     <p>{{item.name}}</p>
     <p>{{item.descrizione}}</p>
-    <p>{{item.genere}}</p>
+    <p>{{item.genere.nome}}</p>
     <p>{{item.rating}}</p>
     <p>{{item.prezzo}}</p>
     <p>{{item.annoUscita}}</p>
 
-    <button routerLink="/edit/item.id">Modifica</button>
+    <button routerLink="/edit/{{item.id}}">Modifica</button>
     <button routerLink="/list">Indietro</button>
 </div>

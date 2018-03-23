@@ -1,14 +1,17 @@
-filtro per generi
-<select [(ngModel)]="filtro">
+<div id="container">
+    <label>Generi</label>
+    <select [(ngModel)]="filtro">
         <option *ngFor="let genere of generi" value="{{genere.id}}">{{genere.name}}</option>
 </select>
 
-<ng-container *ngFor="let item of items; let i=index">
-    <ng-container *ngIf="item.genere.id == filtro || filtro == 0">
-        <div class="contenitoreLista" (click)="visualizzaDettaglio(item)">
-            <div>name: {{item.name}}</div>
-            <div>descrizione: {{item.descrizione}}</div>
-            <div *ngIf="i!=items.length-1">-------------------</div>
-        </div>
+    <ng-container *ngFor="let item of items; let i=index">
+        <ng-container *ngIf="item.genere.id == filtro || filtro == 0">
+            <div class="contenitoreLista" (click)="visualizzaDettaglio(item)">
+                <img src="{{item.immagine}}">
+                <div>Name: {{item.name}}</div>
+                <div>Descrizione: {{item.descrizione}}</div>
+                <div *ngIf="i!=items.length-1">-------------------</div>
+            </div>
+        </ng-container>
     </ng-container>
-</ng-container>
+</div>

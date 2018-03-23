@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { UserService } from './user.service';
-import { User } from '../objs/user';
-import { EditComponent } from '../components/edit/edit.component';
-import { AuthService } from './auth-service.service';
+import { UserService } from '../LoginServices/user.service';
+import { User } from '../../objs/user';
+import { EditComponent } from '../../components/edit/edit.component';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthGuardService {
