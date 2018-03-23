@@ -10,6 +10,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MainRouter } from './routers/mainRouter';
 import { ListaGameService } from './services/list-game.service';
 import { MenuService } from './services/menu.service';
+import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { MenuService } from './services/menu.service';
     HomeComponent,
     ListComponent,
     EditComponent,
-    MenuComponent
+    MenuComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
