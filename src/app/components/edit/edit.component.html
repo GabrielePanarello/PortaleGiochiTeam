@@ -1,14 +1,14 @@
-<div class="contenitore margine">
+<div class="contenitore">
     <input [(ngModel)]="inputGame" class="inputGame" />
     <ng-container *ngIf="outputGame != undefined">
-        <input [(ngModel)]="outputGame.name" class="inputGame" />
-        <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
-        <input [(ngModel)]="outputGame.genere" class="inputGame" />
-        <input [(ngModel)]="outputGame.rating" class="inputGame" />
-        <input [(ngModel)]="outputGame.prezzo" class="inputGame" />
-        <input [(ngModel)]="outputGame.annoUscita" class="inputGame" />
+        <input [(ngModel)]="outputGame.name" class="inputGame" required #nomeVar="ngModel" [class.rosso]="nomeVar.invalid" />
+        <input [(ngModel)]="outputGame.descrizione" class="inputGame" required #descrizioneVar="ngModel" [class.rosso]="descrizioneVar.invalid" />
+        <input [(ngModel)]="outputGame.genere" class="inputGame" required #genereVar="ngModel" [class.rosso]="genere.invalid" />
+        <input [(ngModel)]="outputGame.rating" class="inputGame" required #ratingVar="ngModel" [class.rosso]="rating.invalid" />
+        <input [(ngModel)]="outputGame.prezzo" class="inputGame" required #prezzoVar="ngModel" [class.rosso]="prezzo.invalid" />
+        <input [(ngModel)]="outputGame.annoUscita" class="inputGame" required #annoUscitaVar="ngModel" [class.rosso]="annoUscita.invalid" />
     </ng-container>
 
-    <button (click)="ricerca()" class="inputGame">Ricerca</button>
-    <button (click)="modifica()" name="reset" class="inputGame">modifica</button>
+    <button (click)="ricerca()" class="bottoni">Ricerca</button>
+    <button (click)="modifica()" name="reset" class="bottoni">modifica</button>
 </div>

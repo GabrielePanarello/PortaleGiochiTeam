@@ -2,7 +2,7 @@
     <div class="testa">
         <div class="logTesta">LOGIN</div>
     </div>
-    <label class="user"><div class="testoUP">username</div><input [(ngModel)]="username" /></label>
-    <label class="password"><div class="testoUP">password</div><input type="password" [(ngModel)]="password" /></label>
+    <label class="user"><div class="testoUP">username</div><input [(ngModel)]="username" required #usernameVar="ngModel" [class.rosso]="usernameVar.invalid"/></label>
+    <label class="password"><div class="testoUP">password</div><input type="password" required [(ngModel)]="password" #passwordVar="ngModel" [class.rosso]="passwordVar.invalid"/></label>
     <input class="bottone" type="submit" value="Invia" (click)="logIn()" />
 </div>

@@ -45,3 +45,7 @@ input {
     margin-left: 10%;
     font-size: 25px;
 }
+
+.rosso {
+    border: 1px solid red;
+}

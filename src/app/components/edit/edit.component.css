@@ -1,31 +1,16 @@
 .contenitore {
-    width: 50%;
-    margin: auto;
-}
-
-.testa {
-    width: 100%;
+    width: 60%;
     margin: 0;
 }
 
-.corpo {
-    width: 100%;
-}
-
-.fondo {
-    width: 100%;
-    padding-top: 5px;
-}
-
-.InputIn {
-    width: 100%;
+.inputGame {
+    width: 99.5%;
     margin-top: 5px;
     padding: 10px;
-    font-size: 15px;
 }
 
-.out {
+.bottoni {
     width: 50%;
     float: left;
-    padding: 10px;
+    font-size: 10px;
 }
