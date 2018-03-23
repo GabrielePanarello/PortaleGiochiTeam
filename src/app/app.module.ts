@@ -15,6 +15,7 @@ import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth-service.service';
+import { AuthLoginService } from './services/auth-login.service';
 
 
 
@@ -32,7 +33,7 @@ import { AuthService } from './services/auth-service.service';
     FormsModule,
     MainRouter
   ],
-  providers: [ListaGameService, MenuService, LoginService, UserService, AuthGuardService, AuthService],
+  providers: [ListaGameService, MenuService, LoginService, UserService, AuthGuardService, AuthService, AuthLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
