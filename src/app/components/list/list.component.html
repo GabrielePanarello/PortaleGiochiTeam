@@ -5,7 +5,7 @@ filtro per generi
 
 <ng-container *ngFor="let item of items; let i=index">
     <ng-container *ngIf="item.genere.id == filtro || filtro == 0">
-        <div (click)="visualizzaDettaglio(item)">
+        <div class="contenitoreLista" (click)="visualizzaDettaglio(item)">
             <div>name: {{item.name}}</div>
             <div>descrizione: {{item.descrizione}}</div>
             <div *ngIf="i!=items.length-1">-------------------</div>
