@@ -5,9 +5,9 @@ import { Game } from '../objs/game';
 export class ListaGameService {
 
   private items: Game[] = [
-    new Game(1, "FIFA2018", "gioco di calcio", "sportivo", 5, 30, 2018),
-    new Game(2, "Need for Speed", "gare ad alta velocità su strade aperte", "sportivo", 6, 15, 2015),
-    new Game(3, "Assassin's Creed", "gioco di guerra", "avventura", 16, 20, 2007)
+    new Game(1, "FIFA2018","assets\fifa.jpg","gioco di calcio", "sportivo", 5, 30, 2018),
+    new Game(2, "Need for Speed","assets\needfor.jpg", "gare ad alta velocità su strade aperte", "sportivo", 6, 15, 2015),
+    new Game(3, "Assassin's Creed","assets\assasin.jpg", "gioco di guerra", "avventura", 16, 20, 2007)
   ];
 
   getCharactersList(): Game[] {
