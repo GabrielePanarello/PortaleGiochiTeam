@@ -14,7 +14,7 @@ export class ListComponent implements OnInit {
   filtro=0;
   items: Game [];
   generi: Genere[];
-
+  controllo=0;
   constructor(private router: Router, private listService: ListaGameService, private genereService:GenereService){}
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
   }
 
   change(){
-    console.log("filtro: "+this.filtro);
+    console.log("controllo: "+this.controllo);
   }
 
 }
