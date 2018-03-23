@@ -1,11 +1,14 @@
-<div class="contenitore margine">
-    <input [(ngModel)]="inputGame" class="inputGame" />
-    <ng-container *ngIf="outputGame != undefined">
-        <input [(ngModel)]="outputGame.name" class="inputGame" />
-        <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
-        <input [(ngModel)]="outputGame.rating" class="inputGame" />
-    </ng-container>
-
-    <button (click)="ricerca()" class="inputGame">Ricerca</button>
-    <button name="reset" class="inputGame">modifica</button>
+<div class="contenitore">
+    <div class="testa"><input [(ngModel)]="inputGame" class="InputIn" /></div>
+    <div class="corpo">
+        <ng-container *ngIf="outputGame != undefined">
+            <input [(ngModel)]="outputGame.name" class="InputIn" />
+            <input [(ngModel)]="outputGame.descrizione" class="InputIn" />
+            <input [(ngModel)]="outputGame.rating" class="InputIn" />
+        </ng-container>
+    </div>
+    <div class="fondo">
+        <button (click)="ricerca()" class="out">Ricerca</button>
+        <button name="reset" class="out">modifica</button>
+    </div>
 </div>
