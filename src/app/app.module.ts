@@ -11,6 +11,8 @@ import { ListaGameService } from './services/list-game.service';
 import { MenuService } from './services/menu.service';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from './services/login.service';
+import { UserService } from './services/user.service';
 
 
 
@@ -28,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MainRouter
   ],
-  providers: [ListaGameService, MenuService],
+  providers: [ListaGameService, MenuService, LoginService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
