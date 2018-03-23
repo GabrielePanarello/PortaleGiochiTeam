@@ -4,7 +4,7 @@ import { Genere } from "./genere";
 
 export class Game{
     
-    id: number;
+    id: string;
     name: string;
     immagine:string;
     descrizione: string;
@@ -13,7 +13,7 @@ export class Game{
     prezzo: number;
     annoUscita: number;
 
-    constructor(id: number = undefined, name: string = "",immagine:string, descrizione: string = "", genere: Genere = undefined, rating: number=undefined, prezzo: number=undefined, annoUscita: number=undefined){
+    constructor(id: string = undefined, name: string = "",immagine:string, descrizione: string = "", genere: Genere = undefined, rating: number=undefined, prezzo: number=undefined, annoUscita: number=undefined){
         this.id = id;
         this.name = name;
         this.immagine=immagine;
@@ -25,7 +25,7 @@ export class Game{
     }
 
     clone(){
-        return new Game(this.id, this.name, this.descrizione, this.immagine, this.genere, this.rating, this.prezzo, this.annoUscita);
+        return new Game(this.id, this.name, this.immagine,this.descrizione, this.genere.clone(), this.rating, this.prezzo, this.annoUscita);
     }
 
 }

@@ -1,0 +1,30 @@
+.contenitoreLista {
+    width: 80%;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.id,
+.nome,
+.descrizione,
+.spazio {
+    font-size: 20px;
+}
+
+.id {
+    width: 100%;
+}
+
+.nome {
+    width: 100%;
+}
+
+.descrizione {
+    width: 100%;
+}
+
+.spazio {
+    width: 100%;
+}

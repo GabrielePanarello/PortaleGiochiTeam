@@ -1,5 +1,8 @@
-<div>
-    <label>Username: </label><input [(ngModel)]="username" />
-    <label>Password: </label><input type="password" [(ngModel)]="password" />
-    <input type="submit" value="Invia" (click)="logIn()" />
+<div class="contenitore">
+    <div class="testa">
+        <div class="logTesta">LOGIN</div>
+    </div>
+    <label class="user"><div class="testoUP">username</div><input [(ngModel)]="username" /></label>
+    <label class="password"><div class="testoUP">password</div><input type="password" [(ngModel)]="password" /></label>
+    <input class="bottone" type="submit" value="Invia" (click)="logIn()" />
 </div>
