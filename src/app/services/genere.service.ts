@@ -20,7 +20,7 @@ export class GenereService {
   getGenereById(id: number): Genere {
     for (let item of this.genereItems) {
         if (item.id == id) {
-            return item.clone();
+            return item;
         }
     }
   }

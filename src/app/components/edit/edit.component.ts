@@ -30,16 +30,16 @@ export class EditComponent implements OnInit {
   constructor(private listService: ListaGameService, private genresService: GenereService, private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { 
     this.activatedRoute.params.subscribe(params => {
       if (params['id'] != null && params['id'] != "") {
-        this.newItem = this.listService.getGameById(params['id']);
-        this.outputGame = this.newItem.clone();
-        this.outputGame.genere = this.outputGame.genere.clone();
+        this.outputGame = this.listService.getGameById(params['id']);
+        this.newItem = this.outputGame.clone();
+        this.newItem.genere = this.newItem.genere.clone();
         this.fromDetail = true;
       }
     });
 
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        this.authService.checkItemSign(this.outputGame, this.newItem, this.isClicked);
+        this.authService.checkItemSign(this.newItem, this.outputGame, this.isClicked);
       }
     });
 
@@ -62,11 +62,11 @@ export class EditComponent implements OnInit {
     if (value != undefined) {
       if (this.listService.getGameByName(value) == null) {
         this.founds = true;
-        this.newItem = undefined;
+        this.outputGame = undefined;
       } else {
-        this.newItem = this.listService.getGameByName(value);
-        this.outputGame = this.newItem.clone();
-        this.outputGame.genere = this.outputGame.genere.clone();
+        this.outputGame = this.listService.getGameByName(value);
+        this.newItem = this.outputGame.clone();
+        this.newItem.genere = this.newItem.genere.clone();
         this.founds = false;
       }
     } else {
@@ -75,13 +75,13 @@ export class EditComponent implements OnInit {
   }
 
   updateGame() {
-    this.listService.editGame(this.newItem);
+    this.listService.editGame(this.outputGame);
     this.isClicked = true;
     alert("Modificato");
   }
 
   resetDefaultGame(){
-    this.newItem = this.outputGame;
+    this.outputGame = this.newItem;
   }
 
 }
