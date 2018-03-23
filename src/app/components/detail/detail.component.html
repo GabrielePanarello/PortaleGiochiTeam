@@ -6,6 +6,6 @@
     <p>{{item.prezzo}}</p>
     <p>{{item.annoUscita}}</p>
 
-    <button routerLink="/edit/item.id">Modifica</button>
+    <button (click)="redirectToEdit(item)">Modifica</button>
     <button routerLink="/list">Indietro</button>
 </div>
