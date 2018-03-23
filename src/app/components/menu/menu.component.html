@@ -1,5 +1,8 @@
 <div>
     <ul>
-        <li *ngFor="let item of menuItems" routerLink="/{{item.nome}}" routerLinkActive="active">{{item.nome}}</li>
+        <li *ngIf="isAdmin == true">{{username}}</li>
+        <div *ngFor="let item of items, let i=index">
+            <li *ngIf="item.visualizzato != true" routerLink="/{{item.descrizione}}" routerLinkActive="selected">{{item.descrizione}}</li>
+        </div>
     </ul>
 </div>
