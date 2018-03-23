@@ -7,12 +7,22 @@ export class GenereService {
   constructor() { }
 
   private genereItems : Genere[] = [
-    new Genere(0,"sportivo"),
-    new Genere(1,"sparatutto"),
-    new Genere(2,"avventura")
+    new Genere(0, "tutti"),
+    new Genere(1,"sportivo"),
+    new Genere(2,"sparatutto"),
+    new Genere(3,"avventura")
   ];
 
   getGenereItems() : Genere[]{
     return this.genereItems;
+  }
+
+  getGameById(id: number): Genere {
+    for (let item of this.genereItems) {
+        if (item.id == id) {
+            return item.clone();
+        }
+    }
+    return null;
   }
 }

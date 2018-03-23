@@ -1,5 +1,7 @@
 import { Genere } from "./genere";
 
+
+
 export class Game{
     
     id: number;
@@ -24,4 +26,5 @@ export class Game{
     clone(){
         return new Game(this.id, this.name, this.descrizione, this.genere, this.rating, this.prezzo, this.annoUscita);
     }
+
 }

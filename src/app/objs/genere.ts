@@ -7,4 +7,9 @@ export class Genere {
         this.id = id;
         this.name = name;
     }
+
+    clone(){
+        return new Genere(this.id, this.name);
+    }
+
 }
