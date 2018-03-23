@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -10,12 +11,12 @@ import { MainRouter } from './routers/mainRouter';
 import { ListaGameService } from './services/list-game.service';
 import { MenuService } from './services/menu.service';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth-service.service';
 import { AuthLoginService } from './services/auth-login.service';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 
@@ -26,7 +27,8 @@ import { AuthLoginService } from './services/auth-login.service';
     ListComponent,
     EditComponent,
     MenuComponent,
-    LoginComponent
+    LoginComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

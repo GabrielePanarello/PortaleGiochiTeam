@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from '../../objs/menu';
 import { MenuService } from '../../services/menu.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,12 +11,29 @@ import { MenuService } from '../../services/menu.service';
 export class MenuComponent implements OnInit {
 
   menuItems: Menu[];
+  isAdmin = false;
+  username: string;
 
-  constructor(private menuService: MenuService) {
+  constructor() {
+    let menuService: MenuService = new MenuService();
+    let userService: UserService = new UserService();
+    this.menuItems = menuService.getMenuItems();
+    this.isAdmin = userService.checkIsLogged(sessionStorage.getItem('user'));
   }
 
   ngOnInit() {
-    this.menuItems = this.menuService.getMenuItems();
-  }
 
+    if (!this.isAdmin) {
+      for (let item of this.menuItems) {
+        if (item.nome == "edit") {
+          item.visualizzato = true;
+        }
+      }
+    }else{
+      this.username = sessionStorage.getItem('user');
+      this.username = this.username.toLocaleUpperCase();
+    }
+
+    
+  }
 }

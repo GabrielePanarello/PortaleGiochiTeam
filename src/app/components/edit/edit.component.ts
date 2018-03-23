@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListaGameService } from '../../services/list-game.service';
+import { Game } from '../../objs/game';
 
 @Component({
   selector: 'app-edit',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditComponent implements OnInit {
 
-  constructor() { }
+  gamesList: Game[];
+  inputGame: string;
+  outputGame: Game;
+
+  constructor(private listGameService: ListaGameService) { }
 
   ngOnInit() {
+  }
+
+  ricerca(){
+      this.outputGame = this.listGameService.getGameByName(this.inputGame);
+      console.log(this.outputGame);
   }
 
 }

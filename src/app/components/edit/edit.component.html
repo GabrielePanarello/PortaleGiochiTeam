@@ -1,3 +1,11 @@
-<p>
-  edit works!
-</p>
+<div class="contenitore margine">
+    <input [(ngModel)]="inputGame" class="inputGame" />
+    <ng-container *ngIf="outputGame != undefined">
+        <input [(ngModel)]="outputGame.name" class="inputGame" />
+        <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
+        <input [(ngModel)]="outputGame.rating" class="inputGame" />
+    </ng-container>
+
+    <button (click)="ricerca()" class="inputGame">Ricerca</button>
+    <button name="reset" class="inputGame">modifica</button>
+</div>

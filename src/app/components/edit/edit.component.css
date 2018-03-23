@@ -1,0 +1,26 @@
+.contenitore {
+    margin: auto;
+    width: 40%;
+}
+
+.inputGame {
+    margin: 0;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.margine {
+    margin-top: 50px;
+}
+
+
+/*input {
+    margin-top: 5px;
+    width: 100%;
+}
+
+.bottoni {
+    padding: 5px;
+    width: 50%;
+    float: left;
+}*/

@@ -20,7 +20,7 @@ export class AuthGuardService {
     if (sessionStorage.getItem('user') == null) {
       this.router.navigate(['/login']);
     } else {
-      if(state.url.indexOf("modifica") != -1){
+      if(state.url.indexOf("edit") != -1){
         for (let user of this.users) {
           if (user.username == sessionStorage.getItem('user') && user.isAdmin != true) {
             this.router.navigate(['/home']);
