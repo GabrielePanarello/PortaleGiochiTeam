@@ -65,8 +65,8 @@ export class EditComponent implements OnInit {
         this.newItem = undefined;
       } else {
         this.newItem = this.listService.getGameByName(value);
-        this.outputGame = this.newItem;
-        this.outputGame.genere = this.outputGame.genere;
+        this.outputGame = this.newItem.clone();
+        this.outputGame.genere = this.outputGame.genere.clone();
         this.founds = false;
       }
     } else {
@@ -75,7 +75,7 @@ export class EditComponent implements OnInit {
   }
 
   updateGame() {
-    this.listService.changeGame(this.newItem);
+    this.listService.editGame(this.newItem);
     this.isClicked = true;
     alert("Modificato");
   }
