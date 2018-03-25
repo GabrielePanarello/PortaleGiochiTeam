@@ -10,6 +10,10 @@
     box-shadow: 17px -1px 49px -5px rgba(171, 166, 171, 1);
 }
 
+#spec {
+    text-align: center;
+}
+
 #prezzo {
     padding-top: 30px;
     font-size: 20px;
@@ -24,6 +28,11 @@
     cursor: pointer;
 }
 
+#ctaDetail:hover {
+    background-color: black;
+    color: white;
+}
+
 #roundTop {
     position: absolute;
     width: 40px;
@@ -32,6 +41,7 @@
     border-left: solid black;
     border-width: 3px;
     border-top-left-radius: 4px;
+    transition: width 0.5s, height 0.5s;
 }
 
 #roundBottom {

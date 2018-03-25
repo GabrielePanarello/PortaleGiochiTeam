@@ -24,6 +24,8 @@
 #loggedUser {
     float: right;
     vertical-align: middle;
+    border-left: solid black;
+    height: 30px;
 }
 
 #loggedUser img {

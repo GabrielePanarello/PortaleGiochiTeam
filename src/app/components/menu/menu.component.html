@@ -4,6 +4,7 @@
         <li id="loggedUser">
             {{username}}
             <img src="assets/userImg.png">
+            <img (click)="logout()" src="assets/logout.png">
         </li>
         <div *ngFor="let item of menuItems, let i=index">
             <li *ngIf="item.visualizzato != true" routerLink="/{{item.nome}}" routerLinkActive="selected">{{item.nome}}</li>

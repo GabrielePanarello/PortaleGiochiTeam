@@ -3,7 +3,11 @@
     margin: 0 auto;
 }
 
-#generiContainer {
+#titolo {
+    font-size: 25px;
+}
+
+.generiContainer {
     display: inline-block;
     position: absolute;
     width: 20%;
@@ -32,6 +36,7 @@ li:hover {
     border-left: solid black;
     border-width: 3px;
     border-top-left-radius: 4px;
+    transition: width 0.5s, height 0.5s;
 }
 
 #roundBottom {
@@ -44,6 +49,7 @@ li:hover {
     border-bottom-right-radius: 4px;
     bottom: 0;
     right: 0;
+    transition: width 0.5s, height 0.5s;
 }
 
 .giochiContainer {
@@ -60,6 +66,16 @@ li:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(100px, auto);
+}
+
+.giocoContainer:hover #roundBottom {
+    width: 50%;
+    height: 50%;
+}
+
+.giocoContainer:hover #roundTop {
+    width: 50%;
+    height: 50%;
 }
 
 .one {
@@ -95,4 +111,9 @@ li:hover {
     border-radius: 4px;
     font-style: bold;
     cursor: pointer;
+}
+
+#ctaDetail:hover {
+    background-color: black;
+    color: white;
 }

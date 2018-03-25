@@ -10,7 +10,7 @@
             <p id="info">{{item.annoUscita}}</p>
             <p id="prezzo"> {{item.prezzo | currency:'EUR'}} </p>
 
-            <button id="ctaDetail" routerLink="/edit/{{item.id}}">Modifica</button>
+            <button id="ctaDetail" *ngIf="isLogged" routerLink="/edit/{{item.id}}">Modifica</button>
             <button id="ctaDetail" routerLink="/list">Indietro</button>
         </div>
         <div class="two">

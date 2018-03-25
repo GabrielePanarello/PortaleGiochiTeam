@@ -1,20 +1,33 @@
 <div class="contenitore margine">
-    <input [(ngModel)]="inputGame" class="inputGame" />
+    <div class="find">
+        <input type="text" [(ngModel)]="inputGame" placeholder="Digita il titolo di un gioco" />
+        <button id="cta" (click)="showGame(inputGame)">Ricerca</button>
+    </div>
+    <h2 *ngIf="founds == true">Elemento Non Trovato!</h2>
     <ng-container *ngIf="outputGame != undefined">
-        <input [(ngModel)]="outputGame.name" class="inputGame" />
-        <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
-        <select [(ngModel)]="outputGame.genere.name">
-        <ng-container *ngFor="let genere of generi">
-            <ng-container *ngIf="genere.id != null && genere != outputGame.genere.id">
-                <option *ngIf="genere.name != 'tutti'" [value]="genere.name">{{genere.name}}</option>
-            </ng-container>
-        </ng-container>
-        </select>
-        <input [(ngModel)]="outputGame.rating" class="inputGame" />
-        <input [(ngModel)]="outputGame.prezzo" class="inputGame" />
-        <input [(ngModel)]="outputGame.annoUscita" class="inputGame" />
-    </ng-container>
+        <div class="found">
+            <label>Nome: </label>
+            <input type="text" [(ngModel)]="outputGame.name" />
+            <label>Descrizione: </label>
+            <input type="text" [(ngModel)]="outputGame.descrizione" />
 
-    <button (click)="showGame(inputGame)" class="inputGame">Ricerca</button>
-    <button (click)="updateGame()" name="reset" class="inputGame">modifica</button>
+            <label>Genere: </label>
+            <select [(ngModel)]="outputGame.genere.name">
+            <ng-container *ngFor="let genere of generi">
+                <ng-container *ngIf="genere.id != null && genere != outputGame.genere.id">
+                    <option *ngIf="genere.name != 'tutti'" [value]="genere.name">{{genere.name}}</option>
+                </ng-container>
+            </ng-container>
+            </select>
+
+            <label>Rating: </label>
+            <input type="text" [(ngModel)]="outputGame.rating" />
+            <label>Prezzo: </label>
+            <input type="text" [(ngModel)]="outputGame.prezzo" />
+            <label>Anno Uscita: </label>
+            <input type="text" [(ngModel)]="outputGame.annoUscita" />
+
+            <button id="cta" (click)="updateGame()">Modifica</button>
+        </div>
+    </ng-container>
 </div>
