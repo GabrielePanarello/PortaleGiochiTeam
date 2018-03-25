@@ -1,18 +1,19 @@
 <div class="contenitore margine">
     <div class="find">
-        <input type="text" [(ngModel)]="inputGame" placeholder="Digita il titolo di un gioco" />
+        <input id="cerca" type="text" [(ngModel)]="inputGame" placeholder="Digita il titolo di un gioco" />
         <button id="cta" (click)="showGame(inputGame)">Ricerca</button>
     </div>
     <h2 *ngIf="founds == true">Elemento Non Trovato!</h2>
     <ng-container *ngIf="outputGame != undefined">
         <div class="found">
-            <label>Nome: </label>
-            <input type="text" [(ngModel)]="outputGame.name" />
-            <label>Descrizione: </label>
-            <input type="text" [(ngModel)]="outputGame.descrizione" />
+            <form (ngSubmit)="updateGame()" #editForm="ngForm">
+                <label>Nome: </label>
+                <input class="form-control" type="text" [(ngModel)]="outputGame.name" name="nome" disabled/>
+                <label>Descrizione: </label>
+                <input class="form-control" type="text" [(ngModel)]="outputGame.descrizione" required name="desc" #desc="ngModel" [class.error]="desc.invalid" />
 
-            <label>Genere: </label>
-            <select [(ngModel)]="outputGame.genere.name">
+                <label>Genere: </label>
+                <select [(ngModel)]="outputGame.genere.name" name="generi">
             <ng-container *ngFor="let genere of generi">
                 <ng-container *ngIf="genere.id != null && genere != outputGame.genere.id">
                     <option *ngIf="genere.name != 'tutti'" [value]="genere.name">{{genere.name}}</option>
@@ -20,14 +21,15 @@
             </ng-container>
             </select>
 
-            <label>Rating: </label>
-            <input type="text" [(ngModel)]="outputGame.rating" />
-            <label>Prezzo: </label>
-            <input type="text" [(ngModel)]="outputGame.prezzo" />
-            <label>Anno Uscita: </label>
-            <input type="text" [(ngModel)]="outputGame.annoUscita" />
+                <label>Rating: </label>
+                <input class="form-control" type="text" [(ngModel)]="outputGame.rating" required name="rating" #rating="ngModel" [class.error]="rating.invalid" />
+                <label>Prezzo: </label>
+                <input class="form-control" type="text" [(ngModel)]="outputGame.prezzo" required name="prezzo" #prezzo="ngModel" [class.error]="prezzo.invalid" />
+                <label>Anno Uscita: </label>
+                <input class="form-control" type="text" [(ngModel)]="outputGame.annoUscita" required name="anno" #anno="ngModel" [class.error]="anno.invalid" />
 
-            <button id="cta" (click)="updateGame()">Modifica</button>
+                <input type="submit" id="cta" [disabled]="editForm.invalid" value="Modifica" />
+            </form>
         </div>
     </ng-container>
 </div>

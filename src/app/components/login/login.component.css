@@ -1,47 +1,66 @@
 .contenitore {
     height: 450px;
     width: 30%;
-    border: 1px solid black;
+    border: solid #DA1A35;
     margin: 0 auto;
     margin-top: 5%;
     border-radius: 4px;
 }
 
+#logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 26%;
+}
+
 .testa {
     height: 100px;
     width: 100%;
-    border-bottom: 1px solid black;
-    background-color: black;
+    border-bottom: solid black;
+    background-color: transparent;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     color: white;
+    margin-bottom: 20px;
 }
 
 .logTesta {
     font-size: 25px;
-    position: relative;
     top: 40%;
     left: 45%;
 }
 
-.user,
-.password {
-    height: 150px;
-    width: 100%;
-}
-
-input {
+input[type="text"],
+input[type="password"] {
     width: 80%;
     height: 50px;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-bottom: 5%;
     font-size: 25px;
     border: 1px solid black;
     border-radius: 4px;
 }
 
-.testoUP {
-    margin-top: 5%;
-    margin-left: 10%;
+.bottone {
+    width: 100px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
     font-size: 25px;
+    border: solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white
+}
+
+.bottone:hover {
+    background-color: #DA1A35;
+    color: white;
+}
+
+.testoUP {
+    margin-left: 10%;
+    font-size: 18px;
 }

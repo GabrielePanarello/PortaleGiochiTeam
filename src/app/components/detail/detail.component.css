@@ -35,19 +35,18 @@
 
 #roundTop {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50%;
+    height: 50%;
     border-top: solid black;
     border-left: solid black;
     border-width: 3px;
     border-top-left-radius: 4px;
-    transition: width 0.5s, height 0.5s;
 }
 
 #roundBottom {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 50%;
+    height: 50%;
     border-bottom: solid black;
     border-right: solid black;
     border-width: 3px;
