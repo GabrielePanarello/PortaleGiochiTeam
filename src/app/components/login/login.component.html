@@ -1,8 +1,12 @@
 <div class="contenitore">
     <div class="testa">
-        <div class="logTesta">LOGIN</div>
+        <div class="logTesta">
+            <img id="logo" src="assets/HomeGame.png">
+        </div>
     </div>
-    <label class="user"><div class="testoUP">username</div><input [(ngModel)]="username" /></label>
-    <label class="password"><div class="testoUP">password</div><input type="password" [(ngModel)]="password" /></label>
-    <input class="bottone" type="submit" value="Invia" (click)="logIn()" />
+    <div class="corpo">
+        <label class="testoUP">Username<input type="text"[(ngModel)]="username" /></label>
+        <label class="testoUP">Password<input type="password" [(ngModel)]="password" /></label>
+        <input class="bottone" type="submit" value="Accedi" (click)="logIn()" />
+    </div>
 </div>

@@ -1,13 +1,40 @@
-filtro per generi
-<select [(ngModel)]="filtro">
-        <option *ngFor="let genere of generi" value="{{genere.id}}">{{genere.name}}</option>
-</select>
+<div class="container">
 
-<ng-container *ngFor="let item of items; let i=index">
-    <ng-container *ngIf="item.genere.id == filtro || filtro == 0">
-        <div class="contenitoreLista" (click)="visualizzaDettaglio(item)">
-            <div>name: {{item.name}}</div>
-            <div>descrizione: {{item.descrizione}}</div>
-        </div>
-    </ng-container>
-</ng-container>
+    <div class="generiContainer">
+        <label id="titolo">Generi</label>
+        <!-- <select [(ngModel)]="filtro">
+            <option *ngFor="let genere of generi" value="{{genere.id}}">{{genere.name}}</option>
+        </select> -->
+        <ul id="listaGeneri">
+            <ng-container *ngFor="let genere of generi">
+                <li (click)="filterValue(genere.id)">{{genere.name}}
+                    <ng-container *ngIf="genere.id == filtro">&#9754;</ng-container>
+                </li>
+
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="giochiContainer">
+        <ng-container *ngFor="let item of items; let i=index">
+            <ng-container *ngIf="item.genere.id == filtro || filtro == 0">
+                <div class="giocoContainer">
+                    <div id="roundTop"></div>
+                    <div class="one" id="specs">
+                        <p id="info">{{item.name}}</p>
+                        <p id="info">{{item.genere.name}}</p>
+                        <p id="info">{{item.rating}} &#9733;</p>
+                        <p id="info">{{item.annoUscita}}</p>
+                        <p id="prezzo"> {{item.prezzo | currency:'EUR'}} </p>
+                        <button id="ctaDetail" (click)="visualizzaDettaglio(item)">Dettagli >></button>
+                    </div>
+                    <div class="two">
+                        <img id="copertina" src="{{item.immagine}}">
+                    </div>
+                    <div id="roundBottom"></div>
+                </div>
+            </ng-container>
+        </ng-container>
+    </div>
+
+</div>

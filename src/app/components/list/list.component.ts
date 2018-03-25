@@ -11,20 +11,23 @@ import { GenereService } from '../../services/genere.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  filtro=0;
-  items: Game [];
+  filtro = 0;
+  items: Game[];
   generi: Genere[];
 
-  constructor(private router: Router, private listService: ListaGameService, private genereService:GenereService){}
+  constructor(private router: Router, private listService: ListaGameService, private genereService: GenereService) { }
 
   ngOnInit() {
     this.items = this.listService.getGamesList();
     this.generi = this.genereService.getGenereItems();
   }
 
-  visualizzaDettaglio(item: Game)
-  {
-    this.router.navigate(['detail/'+item.id]);
+  visualizzaDettaglio(item: Game) {
+    this.router.navigate(['detail/' + item.id]);
+  }
+
+  filterValue(id: number) {
+    this.filtro = id;
   }
 
 }

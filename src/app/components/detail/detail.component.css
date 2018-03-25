@@ -1,0 +1,77 @@
+#container {
+    display: block;
+    margin: 0 auto;
+}
+
+#copertina {
+    display: block;
+    margin: auto;
+    height: 360px;
+    box-shadow: 17px -1px 49px -5px rgba(171, 166, 171, 1);
+}
+
+#spec {
+    text-align: center;
+}
+
+#prezzo {
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+#ctaDetail {
+    width: 100px;
+    background-color: transparent;
+    border: solid #DA1A35;
+    border-radius: 4px;
+    font-style: bold;
+    cursor: pointer;
+}
+
+#ctaDetail:hover {
+    background-color: black;
+    color: white;
+}
+
+#roundTop {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: solid black;
+    border-left: solid black;
+    border-width: 3px;
+    border-top-left-radius: 4px;
+}
+
+#roundBottom {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-bottom: solid black;
+    border-right: solid black;
+    border-width: 3px;
+    border-bottom-right-radius: 4px;
+    bottom: 0;
+    right: 0;
+}
+
+.giocoContainer {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.one {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.two {
+    grid-column: 2;
+    grid-row: 1;
+}

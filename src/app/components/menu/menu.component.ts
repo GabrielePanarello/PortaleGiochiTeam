@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Menu } from '../../objs/menu';
 import { MenuService } from '../../services/menu.service';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/LoginServices/user.service';
+import { Router } from '@angular/router';
+import { LoginService } from '../../services/LoginServices/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +16,7 @@ export class MenuComponent implements OnInit {
   isAdmin = false;
   username: string;
 
-  constructor() {
+  constructor(private router: Router, private loginService: LoginService) {
     let menuService: MenuService = new MenuService();
     let userService: UserService = new UserService();
     this.menuItems = menuService.getMenuItems();
@@ -23,17 +25,21 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
 
+    this.username = sessionStorage.getItem('user');
+    this.username = this.username.toLocaleUpperCase();
+
     if (!this.isAdmin) {
       for (let item of this.menuItems) {
         if (item.nome == "edit") {
           item.visualizzato = true;
         }
       }
-    }else{
-      this.username = sessionStorage.getItem('user');
-      this.username = this.username.toLocaleUpperCase();
     }
+  }
 
-    
+  logout(){
+    sessionStorage.removeItem('user');
+    this.loginService.changeSubject(false);
+    this.router.navigate(["/login"]);
   }
 }

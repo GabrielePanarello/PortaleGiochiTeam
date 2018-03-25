@@ -3,7 +3,7 @@ import { ListaGameService } from '../../services/list-game.service';
 import { Game } from '../../objs/game';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NavigationStart } from '@angular/router';
-import { AuthService } from '../../services/auth-service.service';
+import { AuthService } from '../../services/GuardServices/auth.service';
 import { GenereService } from '../../services/genere.service';
 import { Genere } from '../../objs/genere';
 
