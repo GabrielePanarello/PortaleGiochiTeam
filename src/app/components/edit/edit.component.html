@@ -3,7 +3,13 @@
     <ng-container *ngIf="outputGame != undefined">
         <input [(ngModel)]="outputGame.name" class="inputGame" />
         <input [(ngModel)]="outputGame.descrizione" class="inputGame" />
-        <input [(ngModel)]="outputGame.genere.name" class="inputGame" />
+        <select [(ngModel)]="outputGame.genere.name">
+        <ng-container *ngFor="let genere of generi">
+            <ng-container *ngIf="genere.id != null && genere != outputGame.genere.id">
+                <option *ngIf="genere.name != 'tutti'" [value]="genere.name">{{genere.name}}</option>
+            </ng-container>
+        </ng-container>
+        </select>
         <input [(ngModel)]="outputGame.rating" class="inputGame" />
         <input [(ngModel)]="outputGame.prezzo" class="inputGame" />
         <input [(ngModel)]="outputGame.annoUscita" class="inputGame" />

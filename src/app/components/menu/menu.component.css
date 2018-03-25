@@ -1,19 +1,37 @@
-.active {
-    background-color: white;
+.selected {
     color: black;
 }
 
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 10%;
+}
+
 #menu {
+    height: 55px;
     display: block;
     margin: 0 auto;
     width: 80%;
-    background-color: #CB3631;
+    background-color: #DA1A35;
+    border: solid black;
     border-radius: 4px;
     text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#loggedUser {
+    float: right;
+    vertical-align: middle;
+}
+
+#loggedUser img {
+    width: 21px;
+    margin: 0 auto;
 }
 
 ul {
-    widows: 70%;
     margin: auto;
     list-style-type: none;
     padding: 0;
@@ -21,16 +39,19 @@ ul {
 }
 
 li {
+    height: 55px;
     float: left;
     display: block;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     cursor: pointer;
+    transition: transform 0.5s;
 }
 
 li:hover {
-    background-color: white;
     color: black;
 }

@@ -1,11 +1,24 @@
 <div id="container">
-    <p>{{item.name}}</p>
-    <p>{{item.descrizione}}</p>
-    <p>{{item.genere.nome}}</p>
-    <p>{{item.rating}}</p>
-    <p>{{item.prezzo}}</p>
-    <p>{{item.annoUscita}}</p>
 
-    <button routerLink="/edit/{{item.id}}">Modifica</button>
-    <button routerLink="/list">Indietro</button>
+    <div class="giocoContainer">
+        <div id="roundTop"></div>
+        <div class="one" id="specs">
+            <p id="info">{{item.name}}</p>
+            <p id="info">{{item.descrizione}}</p>
+            <p id="info">{{item.genere.name}}</p>
+            <p id="info">{{item.rating}} &#9733;</p>
+            <p id="info">{{item.annoUscita}}</p>
+            <p id="prezzo"> {{item.prezzo | currency:'EUR'}} </p>
+
+            <button id="ctaDetail" routerLink="/edit/{{item.id}}">Modifica</button>
+            <button id="ctaDetail" routerLink="/list">Indietro</button>
+        </div>
+        <div class="two">
+            <img id="copertina" src="{{item.immagine}}">
+        </div>
+
+        <div id="roundBottom"></div>
+    </div>
+
+
 </div>

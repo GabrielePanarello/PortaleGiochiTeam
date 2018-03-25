@@ -1,34 +1,98 @@
-container {
+.container {
     width: 80%;
-}
-
-.contenitoreLista {
-    width: 80%;
-    border: 1px solid black;
     margin: 0 auto;
-    margin-top: 15px;
-    padding: 10px;
 }
 
-.id,
-.nome,
-.descrizione,
-.spazio {
+#generiContainer {
+    display: inline-block;
+    position: absolute;
+    width: 20%;
+}
+
+#listaGeneri {
+    padding: 0;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+li {
+    padding-bottom: 10px;
+    transition: font 0.5s;
+}
+
+li:hover {
     font-size: 20px;
 }
 
-.id {
+#roundTop {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-top: solid black;
+    border-left: solid black;
+    border-width: 3px;
+    border-top-left-radius: 4px;
+}
+
+#roundBottom {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-bottom: solid black;
+    border-right: solid black;
+    border-width: 3px;
+    border-bottom-right-radius: 4px;
+    bottom: 0;
+    right: 0;
+}
+
+.giochiContainer {
+    display: inline-block;
     width: 100%;
 }
 
-.nome {
-    width: 100%;
+.giocoContainer {
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
 }
 
-.descrizione {
-    width: 100%;
+.one {
+    grid-column: 1;
+    grid-row: 1;
 }
 
-.spazio {
-    width: 100%;
+.two {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#specs {
+    text-align: center;
+}
+
+#copertina {
+    display: block;
+    margin: auto;
+    height: 360px;
+    box-shadow: 17px -1px 49px -5px rgba(171, 166, 171, 1);
+}
+
+#prezzo {
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+#ctaDetail {
+    width: 100px;
+    background-color: transparent;
+    border: solid #DA1A35;
+    border-radius: 4px;
+    font-style: bold;
+    cursor: pointer;
 }

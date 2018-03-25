@@ -7,10 +7,10 @@ export class GenereService {
   constructor() { }
 
   private genereItems : Genere[] = [
-    new Genere(0, "tutti"),
-    new Genere(1, "sportivo"),
-    new Genere(2, "sparatutto"),
-    new Genere(3, "avventura")
+    new Genere(0, "Tutti"),
+    new Genere(1, "Sportivo"),
+    new Genere(2, "Sparatutto"),
+    new Genere(3, "Avventura")
   ];
 
   getGenereItems() : Genere[]{

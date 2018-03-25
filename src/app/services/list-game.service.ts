@@ -9,9 +9,9 @@ export class ListaGameService {
     constructor(private genereService: GenereService) { }
 
     private items: Game[] = [
-        new Game("1", "FIFA2018", "../../../assets/fifa.jpg", "gioco di calcio", this.genereService.getGenereById(1).clone(), 5, 30, 2018),
-        new Game("2", "Need for Speed", "../../../assets/needfor.jpg", "gare ad alta velocità su strade aperte", this.genereService.getGenereById(0).clone(), 6, 15, 2015),
-        new Game("3", "Assassin's Creed", "../../../assets/assasin.jpg", "gioco di guerra", this.genereService.getGenereById(2).clone(), 16, 20, 2007)
+        new Game("1", "FIFA 18", "../../../assets/fifa.jpg", "Gioco di calcio", this.genereService.getGenereById(1).clone(), 5, 30, 2018),
+        new Game("2", "Need for Speed", "../../../assets/nfs.jpg", "Gioco di macchine", this.genereService.getGenereById(1).clone(), 5, 15, 2015),
+        new Game("3", "Assassin's Creed", "../../../assets/asc.jpg", "Gioco di guerra", this.genereService.getGenereById(2).clone(), 3, 20, 2007)
     ];
 
     getGamesList(): Game[] {

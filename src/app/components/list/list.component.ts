@@ -28,4 +28,8 @@ export class ListComponent implements OnInit {
     this.router.navigate(['detail/'+item.id]);
   }
 
+  filterValue(id: number){
+    this.filtro = id;
+  }
+
 }
