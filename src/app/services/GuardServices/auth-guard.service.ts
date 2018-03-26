@@ -4,13 +4,14 @@ import { UserService } from '../LoginServices/user.service';
 import { User } from '../../objs/user';
 import { EditComponent } from '../../components/edit/edit.component';
 import { AuthService } from './auth.service';
+import { LoginService } from '../LoginServices/login.service';
 
 @Injectable()
 export class AuthGuardService {
 
   users: User[];
 
-  constructor(private authService: AuthService, private router: Router) { 
+  constructor(private authService: AuthService, private router: Router, private loginService: LoginService) { 
     let userService: UserService = new UserService();
     this.users = userService.getUsersList();  
   }
@@ -32,6 +33,9 @@ export class AuthGuardService {
   }
 
   canDeactivate(component: EditComponent) {
+    if(this.authService.isModified == false){
+      return window.confirm('Sei Sicuro?');
+    }
     return this.authService.isModified;
   }
 

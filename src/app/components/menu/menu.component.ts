@@ -4,6 +4,7 @@ import { MenuService } from '../../services/menu.service';
 import { UserService } from '../../services/LoginServices/user.service';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/LoginServices/login.service';
+import { AuthService } from '../../services/GuardServices/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +17,7 @@ export class MenuComponent implements OnInit {
   isAdmin = false;
   username: string;
 
-  constructor(private router: Router, private loginService: LoginService) {
+  constructor(private router: Router, private loginService: LoginService, private authService: AuthService) {
     let menuService: MenuService = new MenuService();
     let userService: UserService = new UserService();
     this.menuItems = menuService.getMenuItems();
@@ -39,7 +40,10 @@ export class MenuComponent implements OnInit {
 
   logout(){
     sessionStorage.removeItem('user');
+    if(this.authService.isModified == false){
     this.loginService.changeSubject(false);
     this.router.navigate(["/login"]);
+    }
+    
   }
 }
